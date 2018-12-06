@@ -55,6 +55,7 @@ def doit():
     ops["return_today"] = ops["market_value"] - ops["pv_prev"]
     ops["return_total"] = ops["market_value"] - ops["pv_orig"]
 
+    ops["delta"] = ops["delta"] * abs(ops["quantity"])
 
     agg_ops = ( ops[["symbol", "market_value", "return_today", "pv_prev",
                         "return_total", "pv_orig", "delta", "theta"]].
